@@ -52,6 +52,7 @@ ax2.set_ylim([0,0.03])
 
 
 ax1.set_xlim([1e-1,100.])
+ax1.set_ylim([-0.025,0.025])
 ax2.set_xlim([1e-1,100.])
 ax1.set_ylabel(r"Contribution to $\partial_tS_{r}$")
 ax2.set(xlabel='r [M]')
@@ -60,14 +61,15 @@ ax3.set_ylabel('Density')
 ax3.set_xscale('log')
 
 
-p22=ax3.plot(X[::4],rh[::4]/2.*np.pi,'-.',label=r"Density $\rho$",color='red')
-ax3.set_ylim(0, 2.5)
+p22=ax3.plot(X[::4],rh[::4]/(2.*np.pi),'-.',label=r"Density $\rho$",color='red')
+ax3.set_yscale('log')
+ax3.set_ylim([1e-3,10])
 ax2.set_ylabel('Angular velocity')
 ax2.grid()
 ax2.set_xscale('log')
 
 ax2.legend(handles = p21  + p22, loc="upper right")
-
+fig1.suptitle("t=%d"%D.time)
 fig1.savefig("Movie/pic-%04d.png"%kl)
 
 
@@ -93,6 +95,7 @@ ax5.set_ylim([0,0.03])
 
 
 ax4.set_xlim([1e-1,100])
+ax4.set_ylim([-0.025,0.025])
 ax5.set_xlim([1e-1,100])
 ax4.set_ylabel(r"Contribution to $\partial_tS_{r}$")
 ax5.set(xlabel='r [M]')
@@ -103,10 +106,12 @@ ax6 = ax5.twinx()
 ax6.set_ylabel('Density')
 ax6.set_xscale('log')
 
-p22=ax6.plot(X[::4],rh[::4],'-.',label=r"Density $\rho$",color='red')
-ax6.set_ylim(0, 2.5)
+p22=ax6.plot(X[::4],rh[::4]/(2*np.pi),'-.',label=r"Density $\rho$",color='red')
+ax6.set_yscale('log')
+ax6.set_ylim([1e-3,10])
+
 ax5.set_ylabel('Angular velocity')
 ax5.grid()
 ax5.legend(handles = p21  + p22, loc="upper right")
-
+fig2.suptitle("t=%d"%D.time)
 fig2.savefig("Movie/pic-avg-%04d.png"%kl)
