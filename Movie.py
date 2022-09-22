@@ -52,7 +52,7 @@ ax2.set_ylim([0,0.1])
 
 
 ax1.set_xlim([1e-1,100.])
-ax1.set_ylim([-0.025,0.025])
+ax1.set_ylim([-5000,5000])
 ax2.set_xlim([1e-1,100.])
 ax1.set_ylabel(r"Contribution to $\partial_tS_{r}$")
 ax2.set(xlabel='r [M]')
@@ -69,7 +69,7 @@ ax2.grid()
 ax2.set_xscale('log')
 
 ax2.legend(handles = p21  + p22, loc="upper right")
-ax2.text(.2,.02,"t=%d"%D.time)
+ax1.text(.2,.02,"t=%d"%D.time)
 fig1.savefig("Movie/pic-%04d.png"%kl)
 
 
@@ -113,5 +113,5 @@ ax6.set_ylim([1e-3,10])
 ax5.set_ylabel('Angular velocity')
 ax5.grid()
 ax5.legend(handles = p21  + p22, loc="upper right")
-ax5.text(.2,.02,"t=%d"%D.time)
+ax4.text(.2,.02,"t=%d"%D.time)
 fig2.savefig("Movie/pic-avg-%04d.png"%kl)
