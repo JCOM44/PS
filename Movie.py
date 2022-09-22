@@ -10,7 +10,7 @@ matplotlib.use('AGG')
 kl=int(argv[1]) #number of the file to plot 
 
 
-D=read.loadvti(kl,file='collapse/data_d3_l3_n')
+D=read.loadvti(kl,file='../../ProcaStarConverted/collapse/data_d3_l3_n')
       #define X (it's the same for all files)
 X=np.exp(D.x)-1.
 PT=D.ptav[:,31]
