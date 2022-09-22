@@ -69,7 +69,7 @@ ax2.grid()
 ax2.set_xscale('log')
 
 ax2.legend(handles = p21  + p22, loc="upper right")
-fig1.suptitle("t=%d"%D.time)
+ax2.text(.2,.02,"t=%d"%D.time)
 fig1.savefig("Movie/pic-%04d.png"%kl)
 
 
@@ -113,5 +113,5 @@ ax6.set_ylim([1e-3,10])
 ax5.set_ylabel('Angular velocity')
 ax5.grid()
 ax5.legend(handles = p21  + p22, loc="upper right")
-fig2.suptitle("t=%d"%D.time)
+ax5.text(.2,.02,"t=%d"%D.time)
 fig2.savefig("Movie/pic-avg-%04d.png"%kl)
