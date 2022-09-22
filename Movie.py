@@ -48,7 +48,7 @@ ax1.grid()
 
 #2nd plot 
 p21=ax2.plot( X[::4],uPhi[::4]/ut[::4],'-', label = r"Angular velocity $\Omega$")      #angular velocity
-ax2.set_ylim([0,0.03])
+ax2.set_ylim([0,0.1])
 
 
 ax1.set_xlim([1e-1,100.])
@@ -91,7 +91,7 @@ ax4.set_xscale('log')
 
 #2nd plot 
 p21=ax5.plot( X[::4],uPhi[::4]/ut[::4],'-', label = r"Angular velocity $\Omega$")      #angular velocity
-ax5.set_ylim([0,0.03])
+ax5.set_ylim([0,0.1])
 
 
 ax4.set_xlim([1e-1,100])
