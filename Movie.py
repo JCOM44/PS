@@ -52,7 +52,7 @@ ax2.set_ylim([0,0.1])
 
 
 ax1.set_xlim([1e-1,100.])
-ax1.set_ylim([-5000,5000])
+ax1.set_ylim([-2000,2000])
 ax2.set_xlim([1e-1,100.])
 ax1.set_ylabel(r"Contribution to $\partial_tS_{r}$")
 ax2.set(xlabel='r [M]')
@@ -69,7 +69,7 @@ ax2.grid()
 ax2.set_xscale('log')
 
 ax2.legend(handles = p21  + p22, loc="upper right")
-ax1.text(.2,.02,"t=%d"%D.time)
+ax1.text(.2,1700.,"t=%d"%D.time)
 fig1.savefig("Movie/pic-%04d.png"%kl)
 
 
