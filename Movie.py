@@ -28,6 +28,9 @@ ut=D.u0[:,31]
 rh=D.rho[:,31]
 v4=D.vol4[:,31]
 
+npzdata = np.load("Omega.npz")
+Omega= npzdata["Omega"]
+R=npzdata["rr"]
 
 
 #plot without avgs
@@ -49,7 +52,7 @@ ax1.grid()
 #2nd plot 
 p21=ax2.plot( X[::4],uPhi[::4]/ut[::4],'-', label = r"Angular velocity $\Omega$")      #angular velocity
 ax2.set_ylim([0,0.1])
-
+p23=ax2.plot(R,Omega, label = "$\Omega$ Theory$") 
 
 ax1.set_xlim([1e-1,100.])
 ax1.set_ylim([-2000,2000])
@@ -92,6 +95,7 @@ ax4.set_xscale('log')
 #2nd plot 
 p21=ax5.plot( X[::4],uPhi[::4]/ut[::4],'-', label = r"Angular velocity $\Omega$")      #angular velocity
 ax5.set_ylim([0,0.1])
+p23=ax5.plot(R,Omega, label = "$\Omega$ Theory$") 
 
 
 ax4.set_xlim([1e-1,100])
@@ -112,6 +116,6 @@ ax6.set_ylim([1e-3,10])
 
 ax5.set_ylabel('Angular velocity')
 ax5.grid()
-ax5.legend(handles = p21  + p22, loc="upper right")
+ax5.legend(handles = p21  + p22 + p23, loc="upper right")
 ax4.text(.2,.02,"t=%d"%D.time)
 fig2.savefig("Movie/pic-avg-%04d.png"%kl)
